@@ -1,0 +1,584 @@
+openapi: 3.0.0
+info:
+  version: 2.2.0
+  title: RivetKit Actors Gateway API
+tags:
+- name: Gateway
+paths:
+  /gateway/{actorId}/health:
+    get:
+      parameters:
+      - name: actorId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: The ID of the actor to target
+      responses:
+        '200':
+          description: Health check
+          content:
+            text/plain:
+              schema:
+                type: string
+      tags:
+      - Gateway
+  /gateway/{actorId}/action/{action}:
+    post:
+      parameters:
+      - name: actorId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: The ID of the actor to target
+      - name: action
+        in: path
+        required: true
+        schema:
+          type: string
+        description: The name of the action to execute
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                args: {}
+              required:
+              - args
+              additionalProperties: false
+      responses:
+        '200':
+          description: Action executed successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  output: {}
+                required:
+                - output
+                additionalProperties: false
+        '400':
+          description: Invalid action
+        '500':
+          description: Internal error
+      tags:
+      - Gateway
+  /gateway/{actorId}/request/{path}:
+    get:
+      parameters:
+      - name: actorId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: The ID of the actor to target
+      - name: path
+        in: path
+        required: true
+        schema:
+          type: string
+        description: The HTTP path to forward to the actor
+      responses:
+        '200':
+          description: Response from actor's raw HTTP handler
+      tags:
+      - Gateway
+    post:
+      parameters:
+      - name: actorId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: The ID of the actor to target
+      - name: path
+        in: path
+        required: true
+        schema:
+          type: string
+        description: The HTTP path to forward to the actor
+      responses:
+        '200':
+          description: Response from actor's raw HTTP handler
+      tags:
+      - Gateway
+    put:
+      parameters:
+      - name: actorId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: The ID of the actor to target
+      - name: path
+        in: path
+        required: true
+        schema:
+          type: string
+        description: The HTTP path to forward to the actor
+      responses:
+        '200':
+          description: Response from actor's raw HTTP handler
+      tags:
+      - Gateway
+    delete:
+      parameters:
+      - name: actorId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: The ID of the actor to target
+      - name: path
+        in: path
+        required: true
+        schema:
+          type: string
+        description: The HTTP path to forward to the actor
+      responses:
+        '200':
+          description: Response from actor's raw HTTP handler
+      tags:
+      - Gateway
+    patch:
+      parameters:
+      - name: actorId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: The ID of the actor to target
+      - name: path
+        in: path
+        required: true
+        schema:
+          type: string
+        description: The HTTP path to forward to the actor
+      responses:
+        '200':
+          description: Response from actor's raw HTTP handler
+      tags:
+      - Gateway
+    head:
+      parameters:
+      - name: actorId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: The ID of the actor to target
+      - name: path
+        in: path
+        required: true
+        schema:
+          type: string
+        description: The HTTP path to forward to the actor
+      responses:
+        '200':
+          description: Response from actor's raw HTTP handler
+      tags:
+      - Gateway
+    options:
+      parameters:
+      - name: actorId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: The ID of the actor to target
+      - name: path
+        in: path
+        required: true
+        schema:
+          type: string
+        description: The HTTP path to forward to the actor
+      responses:
+        '200':
+          description: Response from actor's raw HTTP handler
+      tags:
+      - Gateway
+  /gateway/{actorId}/inspector/state:
+    get:
+      parameters:
+      - name: actorId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: The ID of the actor to target
+      - name: Authorization
+        in: header
+        required: false
+        schema:
+          type: string
+        description: Bearer token for inspector authentication. Required in production, optional in development.
+      responses:
+        '200':
+          description: Current actor state
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  state: {}
+        '401':
+          description: Unauthorized
+      tags:
+      - Gateway
+    patch:
+      parameters:
+      - name: actorId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: The ID of the actor to target
+      - name: Authorization
+        in: header
+        required: false
+        schema:
+          type: string
+        description: Bearer token for inspector authentication. Required in production, optional in development.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                state: {}
+              required:
+              - state
+      responses:
+        '200':
+          description: State updated
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  ok:
+                    type: boolean
+        '401':
+          description: Unauthorized
+      tags:
+      - Gateway
+  /gateway/{actorId}/inspector/connections:
+    get:
+      parameters:
+      - name: actorId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: The ID of the actor to target
+      - name: Authorization
+        in: header
+        required: false
+        schema:
+          type: string
+        description: Bearer token for inspector authentication. Required in production, optional in development.
+      responses:
+        '200':
+          description: Current actor connections
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  connections:
+                    type: array
+                    items:
+                      type: object
+        '401':
+          description: Unauthorized
+      tags:
+      - Gateway
+  /gateway/{actorId}/inspector/rpcs:
+    get:
+      parameters:
+      - name: actorId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: The ID of the actor to target
+      - name: Authorization
+        in: header
+        required: false
+        schema:
+          type: string
+        description: Bearer token for inspector authentication. Required in production, optional in development.
+      responses:
+        '200':
+          description: Available actor actions/RPCs
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  rpcs:
+                    type: object
+        '401':
+          description: Unauthorized
+      tags:
+      - Gateway
+  /gateway/{actorId}/inspector/action/{name}:
+    post:
+      parameters:
+      - name: actorId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: The ID of the actor to target
+      - name: name
+        in: path
+        required: true
+        schema:
+          type: string
+        description: The name of the action to execute
+      - name: Authorization
+        in: header
+        required: false
+        schema:
+          type: string
+        description: Bearer token for inspector authentication. Required in production, optional in development.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                args:
+                  type: array
+                  items: {}
+      responses:
+        '200':
+          description: Action executed successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  output: {}
+        '401':
+          description: Unauthorized
+      tags:
+      - Gateway
+  /gateway/{actorId}/inspector/queue:
+    get:
+      parameters:
+      - name: actorId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: The ID of the actor to target
+      - name: limit
+        in: query
+        required: false
+        schema:
+          type: integer
+          default: 50
+        description: Maximum number of queue messages to return
+      - name: Authorization
+        in: header
+        required: false
+        schema:
+          type: string
+        description: Bearer token for inspector authentication. Required in production, optional in development.
+      responses:
+        '200':
+          description: Queue status
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  size:
+                    type: integer
+                  maxSize:
+                    type: integer
+                  truncated:
+                    type: boolean
+                  messages:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                        name:
+                          type: string
+                        createdAtMs:
+                          type: integer
+        '401':
+          description: Unauthorized
+      tags:
+      - Gateway
+  /gateway/{actorId}/inspector/traces:
+    get:
+      parameters:
+      - name: actorId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: The ID of the actor to target
+      - name: startMs
+        in: query
+        required: false
+        schema:
+          type: integer
+          default: 0
+        description: Start of time range in epoch milliseconds
+      - name: endMs
+        in: query
+        required: false
+        schema:
+          type: integer
+        description: End of time range in epoch milliseconds. Defaults to now.
+      - name: limit
+        in: query
+        required: false
+        schema:
+          type: integer
+          default: 1000
+        description: Maximum number of spans to return
+      - name: Authorization
+        in: header
+        required: false
+        schema:
+          type: string
+        description: Bearer token for inspector authentication. Required in production, optional in development.
+      responses:
+        '200':
+          description: Trace spans in OTLP JSON format
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  otlp:
+                    type: object
+                  clamped:
+                    type: boolean
+        '401':
+          description: Unauthorized
+      tags:
+      - Gateway
+  /gateway/{actorId}/inspector/workflow-history:
+    get:
+      parameters:
+      - name: actorId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: The ID of the actor to target
+      - name: Authorization
+        in: header
+        required: false
+        schema:
+          type: string
+        description: Bearer token for inspector authentication. Required in production, optional in development.
+      responses:
+        '200':
+          description: Workflow history and status
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  history: {}
+                  isWorkflowEnabled:
+                    type: boolean
+        '401':
+          description: Unauthorized
+      tags:
+      - Gateway
+  /gateway/{actorId}/inspector/workflow/replay:
+    post:
+      parameters:
+      - name: actorId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: The ID of the actor to target
+      - name: Authorization
+        in: header
+        required: false
+        schema:
+          type: string
+        description: Bearer token for inspector authentication. Required in production, optional in development.
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                entryId:
+                  type: string
+      responses:
+        '200':
+          description: Workflow history after scheduling a replay
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  history: {}
+                  isWorkflowEnabled:
+                    type: boolean
+        '401':
+          description: Unauthorized
+      tags:
+      - Gateway
+  /gateway/{actorId}/inspector/summary:
+    get:
+      parameters:
+      - name: actorId
+        in: path
+        required: true
+        schema:
+          type: string
+        description: The ID of the actor to target
+      - name: Authorization
+        in: header
+        required: false
+        schema:
+          type: string
+        description: Bearer token for inspector authentication. Required in production, optional in development.
+      responses:
+        '200':
+          description: Full actor inspector summary
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  state: {}
+                  connections:
+                    type: array
+                    items:
+                      type: object
+                  rpcs:
+                    type: object
+                  queueSize:
+                    type: integer
+                  isStateEnabled:
+                    type: boolean
+                  isDatabaseEnabled:
+                    type: boolean
+                  isWorkflowEnabled:
+                    type: boolean
+                  workflowHistory: {}
+        '401':
+          description: Unauthorized
+      tags:
+      - Gateway
