@@ -1,7 +1,18 @@
 aid: rivet
 name: Rivet
-description: Rivet is a company surfaced as a portfolio company of a16z, lux-capital and added to the
-  API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  Rivet is infrastructure for the agentic era, providing durable, stateful
+  compute for AI agents and realtime applications. Its core primitive, Rivet
+  Actors (RivetKit), is a runtime for long-lived processes that co-locate
+  in-memory state with compute, support built-in WebSockets, workflows, queues,
+  scheduling and cron, hibernate when idle, and scale from zero to thousands of
+  instances across a global edge network. Rivet also ships agentOS, a
+  lightweight WebAssembly-powered alternative to sandboxes for running coding
+  agents, and Rivet Cloud, a managed serverless platform. RivetKit is open
+  source (Apache-2.0), self-hostable on Postgres, the file system, or
+  FoundationDB, with client SDKs for JavaScript, React, Rust, Swift and SwiftUI,
+  a CLI, an OpenAPI-described gateway/inspector HTTP API and an AsyncAPI
+  WebSocket protocol. Rivet is backed by Y Combinator and a16z Speedrun.
 url: https://raw.githubusercontent.com/api-evangelist/rivet/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -10,14 +21,135 @@ x-backed-by:
 - lux-capital
 x-tier: stub
 x-tier-reason: portfolio-lead
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-21'
+image: https://rivet.dev/favicon.ico
 tags:
 - Company
-apis: []
+- Infrastructure
+- Actors
+- Stateful Compute
+- AI Agents
+- Realtime
+- Serverless
+- Edge
+- WebSockets
+- Durable Execution
+- Developer Tools
+apis:
+- aid: rivet:rivet-actors-api
+  name: Rivet Actors API
+  description: The Actors API from Rivet — 3 operation(s) for actors.
+  humanURL: https://www.rivet.dev/docs
+  baseURL: https://api.rivet.dev
+  tags:
+  - Actors
+  properties:
+  - type: OpenAPI
+    url: openapi/rivet-actors-api-openapi.yml
+  - type: AsyncAPI
+    url: asyncapi/rivet-rivetkit-asyncapi.json
+  - type: Documentation
+    url: https://www.rivet.dev/docs
+  - type: Authentication
+    url: authentication/rivet-authentication.yml
+  - type: ErrorCatalog
+    url: errors/rivet-problem-types.yml
+  - type: Conventions
+    url: conventions/rivet-conventions.yml
+- aid: rivet:rivet-gateway-api
+  name: Rivet Gateway API
+  description: The Gateway API from Rivet — 12 operation(s) for gateway.
+  humanURL: https://www.rivet.dev/docs
+  baseURL: https://api.rivet.dev
+  tags:
+  - Gateway
+  properties:
+  - type: OpenAPI
+    url: openapi/rivet-gateway-api-openapi.yml
+  - type: AsyncAPI
+    url: asyncapi/rivet-rivetkit-asyncapi.json
+  - type: Documentation
+    url: https://www.rivet.dev/docs
+  - type: Authentication
+    url: authentication/rivet-authentication.yml
+  - type: ErrorCatalog
+    url: errors/rivet-problem-types.yml
+  - type: Conventions
+    url: conventions/rivet-conventions.yml
+common:
+- type: AgenticAccess
+  url: agentic-access/rivet-agentic-access.yml
+- type: DomainSecurity
+  url: security/rivet-domain-security.yml
+- type: DeveloperPortal
+  url: https://www.rivet.dev/docs
+- type: Documentation
+  url: https://www.rivet.dev/docs
+- type: APIReference
+  url: https://www.rivet.dev/typedoc
+- type: GettingStarted
+  url: https://www.rivet.dev/docs/actors/quickstart
+- type: GitHubOrganization
+  url: https://github.com/rivet-dev
+- type: Blog
+  url: https://www.rivet.dev/blog
+- type: ChangeLog
+  url: https://www.rivet.dev/changelog
+- type: StatusPage
+  url: https://rivet.betteruptime.com/
+- type: Pricing
+  url: https://www.rivet.dev/cloud
+- type: SignUp
+  url: https://dashboard.rivet.dev
+- type: Support
+  url: https://www.rivet.dev/discord
+- type: SDKs
+  url: packages/rivet-packages.yml
+- type: Packages
+  url: packages/rivet-packages.yml
+- type: CLI
+  url: cli/rivet-cli.yml
+- type: MCPServer
+  url: mcp/rivet-mcp.yml
+- type: AgentSkill
+  url: skills/_index.yml
+- type: LLMsTxt
+  url: llms/rivet-llms.txt
+- type: AsyncAPI
+  url: asyncapi/rivet-rivetkit-asyncapi.json
+- type: Lifecycle
+  url: lifecycle/rivet-lifecycle.yml
+- type: Conventions
+  url: conventions/rivet-conventions.yml
+- type: Authentication
+  url: authentication/rivet-authentication.yml
+- type: ErrorCatalog
+  url: errors/rivet-problem-types.yml
+- type: Conformance
+  url: conformance/rivet-conformance.yml
+- type: ChangeLog
+  url: changelog/rivet-changelog.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+x-enrichment:
+  date: '2026-07-21'
+  status: enriched
+  artifacts_added: 19
+  pass: local-v1

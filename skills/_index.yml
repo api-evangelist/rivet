@@ -1,0 +1,34 @@
+generated: '2026-07-21'
+method: searched
+source: https://github.com/rivet-dev/skills
+notes: >-
+  Rivet publishes first-party Agent Skills (Claude SKILL.md format) in the
+  github.com/rivet-dev/skills repository, one per marquee actor flow, each with
+  a reference/ set mirroring the docs. The marquee skills are saved verbatim
+  here; the full published set also includes ai-agent-workspace, collaborative-
+  text-editor, cron-jobs, live-cursors, multiplayer-game, per-tenant-database,
+  and vpc-air-gapped.
+skills:
+  - file: rivet-rivetkit.md
+    name: rivetkit
+    description: >-
+      RivetKit backend and Rivet Actor runtime guidance — building, modifying,
+      debugging or testing Rivet Actors, registries, serverless/runner modes,
+      deployment, and actor-based workflows.
+    api: openapi/rivet-rivetkit-openapi.json
+    source: https://github.com/rivet-dev/skills/tree/main/rivetkit
+  - file: rivet-ai-agent.md
+    name: ai-agent
+    description: >-
+      Build an AI agent backend with persistent memory — one Rivet Actor per
+      conversation, queued message handling, and streaming LLM responses as
+      realtime events.
+    api: openapi/rivet-rivetkit-openapi.json
+    source: https://github.com/rivet-dev/skills/tree/main/ai-agent
+  - file: rivet-chat-room.md
+    name: chat-room
+    description: >-
+      Build a realtime chat room on Rivet Actors with broadcast events and
+      shared durable state.
+    api: openapi/rivet-rivetkit-openapi.json
+    source: https://github.com/rivet-dev/skills/tree/main/chat-room

@@ -1,0 +1,18 @@
+generated: '2026-07-21'
+method: searched
+source: https://www.rivet.dev/changelog
+versioning:
+  scheme: date-based changelog + semver per product
+  api_version: '2.2.0'
+  ws_protocol_version: '2.3.5'
+  current_platform: Rivet 2.3
+  docs: https://www.rivet.dev/changelog
+deprecation:
+  policy_url: null
+  sunset_header: unknown
+  notes: No formal deprecation/sunset policy located during this pass.
+sla:
+  url: null
+  uptime_target: null
+status_page: https://rivet.betteruptime.com/
+deprecated_operations: []

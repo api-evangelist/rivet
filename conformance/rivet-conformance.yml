@@ -1,0 +1,26 @@
+generated: '2026-07-21'
+method: derived
+source: openapi/rivet-rivetkit-openapi.json
+standards:
+  - id: openapi-3.0
+    conforms: true
+    evidence: openapi/rivet-rivetkit-openapi.json declares openapi 3.0.0
+  - id: asyncapi-3.0
+    conforms: true
+    evidence: asyncapi/rivet-rivetkit-asyncapi.json declares asyncapi 3.0.0
+  - id: oauth2
+    conforms: false
+    evidence: no oauth2 securityScheme; auth is token / application-defined
+  - id: openid-connect
+    conforms: false
+  - id: rfc9457-problem-details
+    conforms: false
+    evidence: error responses declared without application/problem+json body
+  - id: json-api
+    conforms: false
+  - id: websocket
+    conforms: true
+    evidence: AsyncAPI WebSocket protocol on /gateway/{actorId}/connect
+  - id: mcp
+    conforms: false
+    evidence: no official MCP server found (derived candidate only)

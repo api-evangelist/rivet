@@ -1,0 +1,24 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for RivetKit API
+  version: 1.0.0
+extends: openapi/rivet-rivetkit-openapi.json
+actions:
+  - target: $.info
+    update:
+      x-apievangelist-provider: rivet
+      x-apievangelist-product: Rivet Actors (RivetKit)
+      x-apievangelist-docs: https://www.rivet.dev/docs
+      x-apievangelist-notes: >-
+        Gateway/inspector HTTP API for Rivet Actors. The published spec is thin
+        (no servers, operationIds, schemas, or securitySchemes); AE artifacts add
+        the derived error catalog, conventions, authentication profile, and
+        AsyncAPI WebSocket protocol linkage.
+  - target: $
+    update:
+      servers:
+        - url: https://api.rivet.dev
+          description: Rivet Cloud actor gateway (production).
+  - target: $.info
+    update:
+      x-apievangelist-companion-asyncapi: asyncapi/rivet-rivetkit-asyncapi.json

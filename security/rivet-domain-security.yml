@@ -1,0 +1,20 @@
+generated: '2026-07-21'
+method: probed
+source: live DNS/TLS/HTTP probes of apis.yml + OpenAPI hosts
+hosts:
+- host: www.rivet.dev
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Oct  5 21:13:32 2026 GMT
+  hsts: false
+- host: api.rivet.dev
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Oct  4 19:16:19 2026 GMT
+  hsts: false
+domains:
+- domain: rivet.dev
+  dnssec: false
+  caa: []
+  spf: true
+  dmarc: false

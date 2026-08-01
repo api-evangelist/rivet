@@ -1,0 +1,26 @@
+generated: '2026-07-21'
+method: searched
+source: https://www.rivet.dev/docs/cli
+name: RivetKit CLI
+invoke: npx @rivetkit/cli <command>
+package: "@rivetkit/cli"
+install:
+  - method: npx
+    command: npx @rivetkit/cli <command>
+commands:
+  - name: dev
+    summary: Run a local engine and your handler's dev server (registers a serverless runner).
+    options: [serverless, cloudflare, supabase, none]
+  - name: deploy
+    summary: Build and push Docker images and deploy the project to Rivet Cloud.
+    flags:
+      - name: --token
+        summary: Cloud API token (cloud_api_xxxxx), stored locally after first use.
+  - name: engine
+    summary: Run the bundled rivet-engine binary directly.
+  - name: setup-ci
+    summary: Install the GitHub Actions deploy workflow (deploy on push / pull request).
+flows:
+  - Local development via `rivet dev`.
+  - Cloud deployment via `rivet deploy --token cloud_api_xxxxx`.
+  - CI/CD setup via `rivet setup-ci`.

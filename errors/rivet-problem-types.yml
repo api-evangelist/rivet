@@ -1,0 +1,27 @@
+generated: '2026-07-21'
+method: derived
+source: openapi/rivet-rivetkit-openapi.json
+format: custom
+notes: >-
+  Derived from the RivetKit OpenAPI response codes. The published spec declares
+  these responses without a structured body schema (no application/problem+json),
+  so titles/remediation are captured from the response descriptions. Gateway
+  actor errors surface application-defined error names (e.g. `forbidden`) thrown
+  from access-control hooks; those are not enumerated in the spec.
+problems:
+  - status: 400
+    title: User error
+    description: >-
+      The request was malformed or missing required parameters (e.g. listing or
+      creating actors without required query/body fields).
+    occurrences: 6
+  - status: 401
+    title: Unauthorized
+    description: >-
+      The request was not authenticated/authorized. On the actor gateway this is
+      returned when connection auth or access-control hooks reject the caller.
+    occurrences: 10
+  - status: 500
+    title: Internal error
+    description: An unexpected server-side error occurred.
+    occurrences: 6

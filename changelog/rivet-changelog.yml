@@ -1,0 +1,42 @@
+generated: '2026-07-21'
+method: searched
+source: https://www.rivet.dev/changelog
+scheme: date-based (dated posts) + semver per product
+current_version: Rivet 2.3
+entries:
+  - date: '2026-07-20'
+    title: Introducing Durable Cron Jobs for Rivet Actors
+    highlight: Timezone-aware cron jobs for actor scheduling.
+    breaking: false
+  - date: '2026-07-07'
+    title: Building the World's Fastest Package Manager with agentOS
+    highlight: Packages install in ~130µs.
+    breaking: false
+  - date: '2026-07-06'
+    title: Introducing the agentOS Package Registry
+    highlight: Package registry for agent infrastructure.
+    breaking: false
+  - date: '2026-06-25'
+    title: Introducing agentOS v0.2
+    highlight: WebAssembly-powered alternative to sandboxes.
+    breaking: false
+  - date: '2026-06-19'
+    title: Secure Exec v0.3
+    highlight: Full Rust rewrite with process isolation.
+    breaking: false
+  - date: '2026-06-17'
+    title: Introducing Rivet Compute
+    highlight: Serverless platform for hosting actors.
+    breaking: false
+  - date: '2026-06-17'
+    title: Introducing the Rust SDK for Rivet Actors
+    highlight: Native typed Rust SDK release.
+    breaking: false
+  - date: '2026-06-16'
+    title: Introducing the Effect SDK for Rivet Actors
+    highlight: Effect SDK with stateful support.
+    breaking: false
+  - date: '2026-06-15'
+    title: Introducing Rivet 2.3
+    highlight: Native Rust rewrite with dashboard redesign.
+    breaking: true

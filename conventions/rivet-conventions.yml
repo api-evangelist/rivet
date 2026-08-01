@@ -1,0 +1,51 @@
+generated: '2026-07-21'
+method: searched
+source: https://www.rivet.dev/docs
+docs: https://www.rivet.dev/docs/actors/access-control
+summary: >-
+  Cross-cutting semantics for the RivetKit gateway/inspector HTTP API and the
+  actor runtime. Rivet is not a REST resource CRUD API in the classic sense —
+  it is an actor gateway that proxies HTTP/WebSocket traffic to long-lived,
+  stateful actor instances addressed by actor id and keys.
+authentication:
+  style: application-defined connection auth + Cloud API bearer token
+  ref: authentication/rivet-authentication.yml
+addressing:
+  model: >-
+    Actors are addressed by actor id (path param `{actorId}`/`{actor_id}`) and by
+    actor keys that uniquely identify an instance within an actor type.
+  gateway_prefix: /gateway/{actorId}
+transport:
+  http: true
+  websocket: true
+  websocket_protocol: asyncapi/rivet-rivetkit-asyncapi.json
+  channel: /gateway/{actorId}/connect
+realtime:
+  events: true
+  model: >-
+    Bidirectional WebSocket messages (ToClient / ToServer) plus server-side
+    events actors publish; subscription gated by events.<name>.canSubscribe.
+queues:
+  publish_gate: queues.<name>.canPublish
+state:
+  model: In-memory state co-located with compute, durably persisted; SQLite per actor.
+  kv_endpoint: /actors/{actor_id}/kv/keys/{key}
+inspection:
+  model: >-
+    Live actor introspection via /gateway/{actorId}/inspector/* — state,
+    connections, rpcs, queue, traces, workflow-history, summary.
+idempotency:
+  supported: false
+  notes: No documented idempotency-key header in the published spec/docs for this pass.
+pagination:
+  supported: unknown
+  notes: Not documented in the published OpenAPI (thin spec, no schemas).
+versioning:
+  ref: lifecycle/rivet-lifecycle.yml
+  api_version: '2.2.0'
+  ws_protocol_version: '2.3.5'
+error_envelope:
+  ref: errors/rivet-problem-types.yml
+  notes: >-
+    HTTP status codes 400 (user error) / 401 (unauthorized) / 500 (internal);
+    actor-level errors thrown as named errors (e.g. forbidden) from hooks.

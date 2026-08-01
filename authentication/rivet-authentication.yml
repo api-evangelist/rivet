@@ -1,0 +1,38 @@
+generated: '2026-07-21'
+method: searched
+source: https://www.rivet.dev/docs/actors/access-control
+docs: https://www.rivet.dev/docs/actors/access-control
+summary:
+  types: [bearer, custom-token]
+  notes: >-
+    Rivet uses two distinct planes. (1) The Rivet Cloud management/deploy plane
+    authenticates with a Cloud API token (prefix `cloud_api_`), passed to the
+    CLI via `rivet deploy --token cloud_api_xxxxx` and stored locally for
+    subsequent deploys — a bearer-style secret. (2) The RivetKit actor gateway
+    is application-authenticated: clients pass an `authToken` (or arbitrary
+    params) through connection parameters that your actor validates in the
+    `onBeforeConnect` / `createConnState` hooks, and enforces per-action,
+    per-queue (`canPublish`) and per-event (`canSubscribe`) with a deny-by-default
+    access-control model. The published OpenAPI declares no `securitySchemes`
+    (gateway auth is defined by the developer's own hooks), but gateway
+    operations return 401 Unauthorized when a request is not authorized.
+schemes:
+  - name: CloudApiToken
+    type: http
+    scheme: bearer
+    description: >-
+      Rivet Cloud API token (prefix cloud_api_) used by the CLI and management
+      API to deploy and manage projects.
+    plane: cloud-management
+    source: https://www.rivet.dev/docs/cli
+  - name: ActorConnectionAuth
+    type: apiKey
+    in: connection-params
+    name: authToken
+    description: >-
+      Application-defined token validated in the actor onBeforeConnect /
+      createConnState hooks; authorization enforced by access-control hooks.
+    plane: actor-gateway
+    source: https://www.rivet.dev/docs/actors/access-control
+observed_status_codes:
+  - {code: 401, meaning: Unauthorized, operations: 10}

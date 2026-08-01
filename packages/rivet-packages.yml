@@ -1,0 +1,48 @@
+generated: '2026-07-21'
+method: searched
+source: https://www.npmjs.com/org/rivetkit
+docs: https://www.rivet.dev/docs/clients/javascript
+packages:
+  - language: javascript
+    registry: npm
+    name: rivetkit
+    url: https://www.npmjs.com/package/rivetkit
+    install: npm install rivetkit
+    version: 2.3.5
+    description: Lightweight libraries for building stateful actors on edge platforms.
+    official: true
+  - language: javascript
+    registry: npm
+    name: "@rivetkit/actor"
+    url: https://www.npmjs.com/package/@rivetkit/actor
+    install: npm install @rivetkit/actor
+    official: true
+  - language: javascript
+    registry: npm
+    name: "@rivetkit/react"
+    url: https://www.npmjs.com/package/@rivetkit/react
+    install: npm install @rivetkit/react
+    description: React client hooks for Rivet Actors.
+    official: true
+  - language: javascript
+    registry: npm
+    name: "@rivetkit/cli"
+    url: https://www.npmjs.com/package/@rivetkit/cli
+    install: npx @rivetkit/cli
+    description: RivetKit command-line interface (dev, deploy, engine, setup-ci).
+    official: true
+  - language: rust
+    registry: crates.io
+    name: rivetkit
+    url: https://www.rivet.dev/docs/clients/rust
+    description: >-
+      Native typed Rust SDK for Rivet Actors (announced 2026-06-17). Crate name
+      per docs; crates.io not directly verified during this pass.
+    official: true
+    verified: false
+  - language: swift
+    registry: swift-package-manager
+    name: rivetkit-swift
+    url: https://github.com/rivet-dev/rivetkit-swift
+    description: SDK for Rivet Actors in Swift / SwiftUI.
+    official: true

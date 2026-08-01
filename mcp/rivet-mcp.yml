@@ -1,0 +1,65 @@
+generated: '2026-07-21'
+method: derived
+status: candidate
+source: openapi/rivet-rivetkit-openapi.json
+notes: >-
+  No official hosted/remote MCP server was found for Rivet during this pass.
+  This is a DERIVED candidate tool list mapped from RivetKit gateway/inspector
+  OpenAPI operations (the spec declares no operationIds, so tool names are
+  synthesized from method + path). Rivet publishes an inspector HTTP API well
+  suited to agent tooling.
+server:
+  name: rivet
+  transport: http
+tools:
+  - name: list_actors
+    description: List actors.
+    source_operation: "openapi/rivet-rivetkit-openapi.json#GET /actors"
+  - name: create_actor
+    description: Create an actor.
+    source_operation: "openapi/rivet-rivetkit-openapi.json#POST /actors"
+  - name: upsert_actor
+    description: Create or update an actor.
+    source_operation: "openapi/rivet-rivetkit-openapi.json#PUT /actors"
+  - name: list_actor_names
+    description: List actor names.
+    source_operation: "openapi/rivet-rivetkit-openapi.json#GET /actors/names"
+  - name: get_actor_kv
+    description: Read a key-value entry from an actor.
+    source_operation: "openapi/rivet-rivetkit-openapi.json#GET /actors/{actor_id}/kv/keys/{key}"
+  - name: actor_health
+    description: Check actor gateway health.
+    source_operation: "openapi/rivet-rivetkit-openapi.json#GET /gateway/{actorId}/health"
+  - name: call_actor_action
+    description: Invoke a named action on an actor.
+    source_operation: "openapi/rivet-rivetkit-openapi.json#POST /gateway/{actorId}/action/{action}"
+  - name: inspector_get_state
+    description: Read an actor's inspector state.
+    source_operation: "openapi/rivet-rivetkit-openapi.json#GET /gateway/{actorId}/inspector/state"
+  - name: inspector_patch_state
+    description: Patch an actor's inspector state.
+    source_operation: "openapi/rivet-rivetkit-openapi.json#PATCH /gateway/{actorId}/inspector/state"
+  - name: inspector_list_connections
+    description: List an actor's connections.
+    source_operation: "openapi/rivet-rivetkit-openapi.json#GET /gateway/{actorId}/inspector/connections"
+  - name: inspector_list_rpcs
+    description: List an actor's RPCs.
+    source_operation: "openapi/rivet-rivetkit-openapi.json#GET /gateway/{actorId}/inspector/rpcs"
+  - name: inspector_call_action
+    description: Invoke a named action via the inspector.
+    source_operation: "openapi/rivet-rivetkit-openapi.json#POST /gateway/{actorId}/inspector/action/{name}"
+  - name: inspector_get_queue
+    description: Read an actor's queue.
+    source_operation: "openapi/rivet-rivetkit-openapi.json#GET /gateway/{actorId}/inspector/queue"
+  - name: inspector_get_traces
+    description: Read an actor's traces.
+    source_operation: "openapi/rivet-rivetkit-openapi.json#GET /gateway/{actorId}/inspector/traces"
+  - name: inspector_workflow_history
+    description: Read an actor's workflow history.
+    source_operation: "openapi/rivet-rivetkit-openapi.json#GET /gateway/{actorId}/inspector/workflow-history"
+  - name: inspector_workflow_replay
+    description: Replay an actor's workflow.
+    source_operation: "openapi/rivet-rivetkit-openapi.json#POST /gateway/{actorId}/inspector/workflow/replay"
+  - name: inspector_summary
+    description: Read an actor's inspector summary.
+    source_operation: "openapi/rivet-rivetkit-openapi.json#GET /gateway/{actorId}/inspector/summary"

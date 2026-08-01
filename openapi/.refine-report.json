@@ -1,0 +1,16 @@
+{
+  "provider": "rivet",
+  "sources": [
+    "rivet-actors-api-openapi.yml",
+    "rivet-gateway-api-openapi.yml"
+  ],
+  "outputs": [
+    "rivet-actors-api-openapi.yml",
+    "rivet-gateway-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
