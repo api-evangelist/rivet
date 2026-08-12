@@ -91,6 +91,8 @@ apis:
   - type: Conventions
     url: conventions/rivet-conventions.yml
 common:
+- type: Overlay
+  url: overlays/rivet-rivetkit-overlay.yaml
 - type: AgenticAccess
   url: agentic-access/rivet-agentic-access.yml
 - type: DomainSecurity
