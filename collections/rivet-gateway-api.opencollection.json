@@ -1,0 +1,514 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "RivetKit Actors Gateway API",
+    "version": "2.2.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Gateway",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "GET /gateway/{actorId}/health",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/gateway/:actorId/health",
+            "params": [
+              {
+                "name": "actorId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the actor to target"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "POST /gateway/{actorId}/action/{action}",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/gateway/:actorId/action/:action",
+            "params": [
+              {
+                "name": "actorId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the actor to target"
+              },
+              {
+                "name": "action",
+                "value": "",
+                "type": "path",
+                "description": "The name of the action to execute"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "GET /gateway/{actorId}/request/{path}",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/gateway/:actorId/request/:path",
+            "params": [
+              {
+                "name": "actorId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the actor to target"
+              },
+              {
+                "name": "path",
+                "value": "",
+                "type": "path",
+                "description": "The HTTP path to forward to the actor"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "POST /gateway/{actorId}/request/{path}",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/gateway/:actorId/request/:path",
+            "params": [
+              {
+                "name": "actorId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the actor to target"
+              },
+              {
+                "name": "path",
+                "value": "",
+                "type": "path",
+                "description": "The HTTP path to forward to the actor"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "PUT /gateway/{actorId}/request/{path}",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/gateway/:actorId/request/:path",
+            "params": [
+              {
+                "name": "actorId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the actor to target"
+              },
+              {
+                "name": "path",
+                "value": "",
+                "type": "path",
+                "description": "The HTTP path to forward to the actor"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "PATCH /gateway/{actorId}/request/{path}",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{{baseUrl}}/gateway/:actorId/request/:path",
+            "params": [
+              {
+                "name": "actorId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the actor to target"
+              },
+              {
+                "name": "path",
+                "value": "",
+                "type": "path",
+                "description": "The HTTP path to forward to the actor"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "DELETE /gateway/{actorId}/request/{path}",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/gateway/:actorId/request/:path",
+            "params": [
+              {
+                "name": "actorId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the actor to target"
+              },
+              {
+                "name": "path",
+                "value": "",
+                "type": "path",
+                "description": "The HTTP path to forward to the actor"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "HEAD /gateway/{actorId}/request/{path}",
+            "type": "http"
+          },
+          "http": {
+            "method": "HEAD",
+            "url": "{{baseUrl}}/gateway/:actorId/request/:path",
+            "params": [
+              {
+                "name": "actorId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the actor to target"
+              },
+              {
+                "name": "path",
+                "value": "",
+                "type": "path",
+                "description": "The HTTP path to forward to the actor"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "OPTIONS /gateway/{actorId}/request/{path}",
+            "type": "http"
+          },
+          "http": {
+            "method": "OPTIONS",
+            "url": "{{baseUrl}}/gateway/:actorId/request/:path",
+            "params": [
+              {
+                "name": "actorId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the actor to target"
+              },
+              {
+                "name": "path",
+                "value": "",
+                "type": "path",
+                "description": "The HTTP path to forward to the actor"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "GET /gateway/{actorId}/inspector/state",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/gateway/:actorId/inspector/state",
+            "headers": [
+              {
+                "name": "Authorization",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "actorId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the actor to target"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "PATCH /gateway/{actorId}/inspector/state",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{{baseUrl}}/gateway/:actorId/inspector/state",
+            "headers": [
+              {
+                "name": "Authorization",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "actorId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the actor to target"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "GET /gateway/{actorId}/inspector/connections",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/gateway/:actorId/inspector/connections",
+            "headers": [
+              {
+                "name": "Authorization",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "actorId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the actor to target"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "GET /gateway/{actorId}/inspector/rpcs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/gateway/:actorId/inspector/rpcs",
+            "headers": [
+              {
+                "name": "Authorization",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "actorId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the actor to target"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "POST /gateway/{actorId}/inspector/action/{name}",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/gateway/:actorId/inspector/action/:name",
+            "headers": [
+              {
+                "name": "Authorization",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "actorId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the actor to target"
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "path",
+                "description": "The name of the action to execute"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "GET /gateway/{actorId}/inspector/queue",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/gateway/:actorId/inspector/queue",
+            "headers": [
+              {
+                "name": "Authorization",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "actorId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the actor to target"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of queue messages to return"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "GET /gateway/{actorId}/inspector/traces",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/gateway/:actorId/inspector/traces",
+            "headers": [
+              {
+                "name": "Authorization",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "actorId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the actor to target"
+              },
+              {
+                "name": "startMs",
+                "value": "",
+                "type": "query",
+                "description": "Start of time range in epoch milliseconds"
+              },
+              {
+                "name": "endMs",
+                "value": "",
+                "type": "query",
+                "description": "End of time range in epoch milliseconds. Defaults to now."
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of spans to return"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "GET /gateway/{actorId}/inspector/workflow-history",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/gateway/:actorId/inspector/workflow-history",
+            "headers": [
+              {
+                "name": "Authorization",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "actorId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the actor to target"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "POST /gateway/{actorId}/inspector/workflow/replay",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/gateway/:actorId/inspector/workflow/replay",
+            "headers": [
+              {
+                "name": "Authorization",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "actorId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the actor to target"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "GET /gateway/{actorId}/inspector/summary",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/gateway/:actorId/inspector/summary",
+            "headers": [
+              {
+                "name": "Authorization",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "actorId",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the actor to target"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
