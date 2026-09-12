@@ -116,6 +116,8 @@ apis:
   - type: Conventions
     url: conventions/rivet-conventions.yml
 common:
+- type: Website
+  url: https://www.rivet.dev/
 - type: Overlay
   url: overlays/rivet-rivetkit-overlay.yaml
 - type: AgenticAccess
