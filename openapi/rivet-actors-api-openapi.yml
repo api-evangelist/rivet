@@ -1,4 +1,4 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
   version: 2.2.0
   title: RivetKit Actors API
@@ -49,19 +49,22 @@ paths:
                         create_ts:
                           type: number
                         connectable_ts:
-                          type: number
-                          nullable: true
+                          type:
+                          - number
+                          - 'null'
                         destroy_ts:
-                          type: number
-                          nullable: true
+                          type:
+                          - number
+                          - 'null'
                         sleep_ts:
-                          type: number
-                          nullable: true
+                          type:
+                          - number
+                          - 'null'
                         start_ts:
-                          type: number
-                          nullable: true
-                        error:
-                          nullable: true
+                          type:
+                          - number
+                          - 'null'
+                        error: {}
                       required:
                       - actor_id
                       - name
@@ -77,6 +80,10 @@ paths:
           description: Internal error
       tags:
       - Actors
+      summary: Get actors
+      x-summary-source: derived
+      operationId: getActors
+      x-operation-id-source: derived
     put:
       requestBody:
         required: true
@@ -96,8 +103,9 @@ paths:
                 crash_policy:
                   type: string
                 input:
-                  type: string
-                  nullable: true
+                  type:
+                  - string
+                  - 'null'
               required:
               - name
               - key
@@ -127,19 +135,22 @@ paths:
                       create_ts:
                         type: number
                       connectable_ts:
-                        type: number
-                        nullable: true
+                        type:
+                        - number
+                        - 'null'
                       destroy_ts:
-                        type: number
-                        nullable: true
+                        type:
+                        - number
+                        - 'null'
                       sleep_ts:
-                        type: number
-                        nullable: true
+                        type:
+                        - number
+                        - 'null'
                       start_ts:
-                        type: number
-                        nullable: true
-                      error:
-                        nullable: true
+                        type:
+                        - number
+                        - 'null'
+                      error: {}
                     required:
                     - actor_id
                     - name
@@ -158,6 +169,10 @@ paths:
           description: Internal error
       tags:
       - Actors
+      summary: Replace actors
+      x-summary-source: derived
+      operationId: putActors
+      x-operation-id-source: derived
     post:
       requestBody:
         required: true
@@ -175,11 +190,13 @@ paths:
                 crash_policy:
                   type: string
                 key:
-                  type: string
-                  nullable: true
+                  type:
+                  - string
+                  - 'null'
                 input:
-                  type: string
-                  nullable: true
+                  type:
+                  - string
+                  - 'null'
               required:
               - name
               - runner_name_selector
@@ -208,19 +225,22 @@ paths:
                       create_ts:
                         type: number
                       connectable_ts:
-                        type: number
-                        nullable: true
+                        type:
+                        - number
+                        - 'null'
                       destroy_ts:
-                        type: number
-                        nullable: true
+                        type:
+                        - number
+                        - 'null'
                       sleep_ts:
-                        type: number
-                        nullable: true
+                        type:
+                        - number
+                        - 'null'
                       start_ts:
-                        type: number
-                        nullable: true
-                      error:
-                        nullable: true
+                        type:
+                        - number
+                        - 'null'
+                      error: {}
                     required:
                     - actor_id
                     - name
@@ -236,6 +256,10 @@ paths:
           description: Internal error
       tags:
       - Actors
+      summary: Create actors
+      x-summary-source: derived
+      operationId: postActors
+      x-operation-id-source: derived
   /actors/names:
     get:
       parameters:
@@ -259,8 +283,7 @@ paths:
                       properties:
                         metadata:
                           type: object
-                          additionalProperties:
-                            nullable: true
+                          additionalProperties: {}
                       required:
                       - metadata
                 required:
@@ -271,6 +294,10 @@ paths:
           description: Internal error
       tags:
       - Actors
+      summary: Get actors names
+      x-summary-source: derived
+      operationId: getActorsNames
+      x-operation-id-source: derived
   /actors/{actor_id}/kv/keys/{key}:
     get:
       parameters:
@@ -293,8 +320,9 @@ paths:
                 type: object
                 properties:
                   value:
-                    type: string
-                    nullable: true
+                    type:
+                    - string
+                    - 'null'
                 required:
                 - value
         '400':
@@ -303,3 +331,7 @@ paths:
           description: Internal error
       tags:
       - Actors
+      summary: Get actors by actor id kv keys by key
+      x-summary-source: derived
+      operationId: getActorsByActorIdKvKeysByKey
+      x-operation-id-source: derived

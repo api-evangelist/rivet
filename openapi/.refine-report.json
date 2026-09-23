@@ -1,8 +1,7 @@
 {
   "provider": "rivet",
   "sources": [
-    "rivet-actors-api-openapi.yml",
-    "rivet-gateway-api-openapi.yml"
+    "_original/rivet-rivetkit-openapi.json"
   ],
   "outputs": [
     "rivet-actors-api-openapi.yml",
@@ -11,6 +10,39 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "rivet-rivetkit-openapi.json: upgraded openapi 3.0.0 -> OpenAPI 3.2.0",
+    "rivet-rivetkit-openapi.json: tagged paths GET /actors -> Actors",
+    "rivet-rivetkit-openapi.json: tagged paths PUT /actors -> Actors",
+    "rivet-rivetkit-openapi.json: tagged paths POST /actors -> Actors",
+    "rivet-rivetkit-openapi.json: tagged paths GET /actors/names -> Actors",
+    "rivet-rivetkit-openapi.json: tagged paths GET /actors/{actor_id}/kv/keys/{key} -> Actors",
+    "rivet-rivetkit-openapi.json: tagged paths GET /gateway/{actorId}/health -> Gateway",
+    "rivet-rivetkit-openapi.json: tagged paths POST /gateway/{actorId}/action/{action} -> Gateway",
+    "rivet-rivetkit-openapi.json: tagged paths GET /gateway/{actorId}/request/{path} -> Gateway",
+    "rivet-rivetkit-openapi.json: tagged paths POST /gateway/{actorId}/request/{path} -> Gateway",
+    "rivet-rivetkit-openapi.json: tagged paths PUT /gateway/{actorId}/request/{path} -> Gateway",
+    "rivet-rivetkit-openapi.json: tagged paths DELETE /gateway/{actorId}/request/{path} -> Gateway",
+    "rivet-rivetkit-openapi.json: tagged paths PATCH /gateway/{actorId}/request/{path} -> Gateway",
+    "rivet-rivetkit-openapi.json: tagged paths HEAD /gateway/{actorId}/request/{path} -> Gateway",
+    "rivet-rivetkit-openapi.json: tagged paths OPTIONS /gateway/{actorId}/request/{path} -> Gateway",
+    "rivet-rivetkit-openapi.json: tagged paths GET /gateway/{actorId}/inspector/state -> Gateway",
+    "rivet-rivetkit-openapi.json: tagged paths PATCH /gateway/{actorId}/inspector/state -> Gateway",
+    "rivet-rivetkit-openapi.json: tagged paths GET /gateway/{actorId}/inspector/connections -> Gateway",
+    "rivet-rivetkit-openapi.json: tagged paths GET /gateway/{actorId}/inspector/rpcs -> Gateway",
+    "rivet-rivetkit-openapi.json: tagged paths POST /gateway/{actorId}/inspector/action/{name} -> Gateway",
+    "rivet-rivetkit-openapi.json: tagged paths GET /gateway/{actorId}/inspector/queue -> Gateway",
+    "rivet-rivetkit-openapi.json: tagged paths GET /gateway/{actorId}/inspector/traces -> Gateway",
+    "rivet-rivetkit-openapi.json: tagged paths GET /gateway/{actorId}/inspector/workflow-history -> Gateway",
+    "rivet-rivetkit-openapi.json: tagged paths POST /gateway/{actorId}/inspector/workflow/replay -> Gateway",
+    "rivet-rivetkit-openapi.json: tagged paths GET /gateway/{actorId}/inspector/summary -> Gateway",
+    "rivet-rivetkit-openapi.json: declared missing tag: Actors",
+    "rivet-rivetkit-openapi.json: declared missing tag: Gateway",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "rivet-actors-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "rivet-gateway-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

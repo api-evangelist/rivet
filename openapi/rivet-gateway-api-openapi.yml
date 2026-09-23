@@ -1,7 +1,7 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
   version: 2.2.0
-  title: RivetKit Actors Gateway API
+  title: RivetKit Gateway API
 tags:
 - name: Gateway
 paths:
@@ -23,6 +23,10 @@ paths:
                 type: string
       tags:
       - Gateway
+      summary: Get gateway by actor id health
+      x-summary-source: derived
+      operationId: getGatewayByActorIdHealth
+      x-operation-id-source: derived
   /gateway/{actorId}/action/{action}:
     post:
       parameters:
@@ -66,6 +70,10 @@ paths:
           description: Internal error
       tags:
       - Gateway
+      summary: Create gateway by actor id action by action
+      x-summary-source: derived
+      operationId: postGatewayByActorIdActionByAction
+      x-operation-id-source: derived
   /gateway/{actorId}/request/{path}:
     get:
       parameters:
@@ -86,6 +94,10 @@ paths:
           description: Response from actor's raw HTTP handler
       tags:
       - Gateway
+      summary: Get gateway by actor id request by path
+      x-summary-source: derived
+      operationId: getGatewayByActorIdRequestByPath
+      x-operation-id-source: derived
     post:
       parameters:
       - name: actorId
@@ -105,6 +117,10 @@ paths:
           description: Response from actor's raw HTTP handler
       tags:
       - Gateway
+      summary: Create gateway by actor id request by path
+      x-summary-source: derived
+      operationId: postGatewayByActorIdRequestByPath
+      x-operation-id-source: derived
     put:
       parameters:
       - name: actorId
@@ -124,6 +140,10 @@ paths:
           description: Response from actor's raw HTTP handler
       tags:
       - Gateway
+      summary: Replace gateway by actor id request by path
+      x-summary-source: derived
+      operationId: putGatewayByActorIdRequestByPath
+      x-operation-id-source: derived
     delete:
       parameters:
       - name: actorId
@@ -143,6 +163,10 @@ paths:
           description: Response from actor's raw HTTP handler
       tags:
       - Gateway
+      summary: Delete gateway by actor id request by path
+      x-summary-source: derived
+      operationId: deleteGatewayByActorIdRequestByPath
+      x-operation-id-source: derived
     patch:
       parameters:
       - name: actorId
@@ -162,6 +186,10 @@ paths:
           description: Response from actor's raw HTTP handler
       tags:
       - Gateway
+      summary: Update gateway by actor id request by path
+      x-summary-source: derived
+      operationId: patchGatewayByActorIdRequestByPath
+      x-operation-id-source: derived
     head:
       parameters:
       - name: actorId
@@ -181,6 +209,10 @@ paths:
           description: Response from actor's raw HTTP handler
       tags:
       - Gateway
+      summary: Check gateway by actor id request by path
+      x-summary-source: derived
+      operationId: headGatewayByActorIdRequestByPath
+      x-operation-id-source: derived
     options:
       parameters:
       - name: actorId
@@ -200,6 +232,10 @@ paths:
           description: Response from actor's raw HTTP handler
       tags:
       - Gateway
+      summary: Describe gateway by actor id request by path
+      x-summary-source: derived
+      operationId: optionsGatewayByActorIdRequestByPath
+      x-operation-id-source: derived
   /gateway/{actorId}/inspector/state:
     get:
       parameters:
@@ -228,6 +264,10 @@ paths:
           description: Unauthorized
       tags:
       - Gateway
+      summary: Get gateway by actor id inspector state
+      x-summary-source: derived
+      operationId: getGatewayByActorIdInspectorState
+      x-operation-id-source: derived
     patch:
       parameters:
       - name: actorId
@@ -265,6 +305,10 @@ paths:
           description: Unauthorized
       tags:
       - Gateway
+      summary: Update gateway by actor id inspector state
+      x-summary-source: derived
+      operationId: patchGatewayByActorIdInspectorState
+      x-operation-id-source: derived
   /gateway/{actorId}/inspector/connections:
     get:
       parameters:
@@ -296,6 +340,10 @@ paths:
           description: Unauthorized
       tags:
       - Gateway
+      summary: Get gateway by actor id inspector connections
+      x-summary-source: derived
+      operationId: getGatewayByActorIdInspectorConnections
+      x-operation-id-source: derived
   /gateway/{actorId}/inspector/rpcs:
     get:
       parameters:
@@ -325,6 +373,10 @@ paths:
           description: Unauthorized
       tags:
       - Gateway
+      summary: Get gateway by actor id inspector rpcs
+      x-summary-source: derived
+      operationId: getGatewayByActorIdInspectorRpcs
+      x-operation-id-source: derived
   /gateway/{actorId}/inspector/action/{name}:
     post:
       parameters:
@@ -368,6 +420,10 @@ paths:
           description: Unauthorized
       tags:
       - Gateway
+      summary: Create gateway by actor id inspector action by name
+      x-summary-source: derived
+      operationId: postGatewayByActorIdInspectorActionByName
+      x-operation-id-source: derived
   /gateway/{actorId}/inspector/queue:
     get:
       parameters:
@@ -419,6 +475,10 @@ paths:
           description: Unauthorized
       tags:
       - Gateway
+      summary: Get gateway by actor id inspector queue
+      x-summary-source: derived
+      operationId: getGatewayByActorIdInspectorQueue
+      x-operation-id-source: derived
   /gateway/{actorId}/inspector/traces:
     get:
       parameters:
@@ -470,6 +530,10 @@ paths:
           description: Unauthorized
       tags:
       - Gateway
+      summary: Get gateway by actor id inspector traces
+      x-summary-source: derived
+      operationId: getGatewayByActorIdInspectorTraces
+      x-operation-id-source: derived
   /gateway/{actorId}/inspector/workflow-history:
     get:
       parameters:
@@ -500,6 +564,10 @@ paths:
           description: Unauthorized
       tags:
       - Gateway
+      summary: Get gateway by actor id inspector workflow history
+      x-summary-source: derived
+      operationId: getGatewayByActorIdInspectorWorkflowHistory
+      x-operation-id-source: derived
   /gateway/{actorId}/inspector/workflow/replay:
     post:
       parameters:
@@ -539,6 +607,10 @@ paths:
           description: Unauthorized
       tags:
       - Gateway
+      summary: Create gateway by actor id inspector workflow replay
+      x-summary-source: derived
+      operationId: postGatewayByActorIdInspectorWorkflowReplay
+      x-operation-id-source: derived
   /gateway/{actorId}/inspector/summary:
     get:
       parameters:
@@ -582,3 +654,7 @@ paths:
           description: Unauthorized
       tags:
       - Gateway
+      summary: Get gateway by actor id inspector summary
+      x-summary-source: derived
+      operationId: getGatewayByActorIdInspectorSummary
+      x-operation-id-source: derived
