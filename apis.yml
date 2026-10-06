@@ -48,7 +48,7 @@ accessModel:
   method: derived
 specificationVersion: '0.23'
 created: '2026-07-17'
-modified: '2026-07-21'
+modified: '2026-10-06'
 image: https://rivet.dev/favicon.ico
 tags:
 - Company
@@ -118,6 +118,10 @@ apis:
   - type: Conventions
     url: conventions/rivet-conventions.yml
 common:
+- url: https://rivet.dev/blog/
+  type: Blog
+- url: https://rivet.dev/rss/feed.xml
+  type: BlogRSS
 - type: Website
   url: https://www.rivet.dev/
 - type: Overlay
